@@ -1,5 +1,8 @@
 <?php
 require_once __DIR__ . './database.php';
+
+ // Démarrer la session PHP
+ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -24,7 +27,7 @@ require_once __DIR__ . './database.php';
                 <div class="collapse navbar-collapse" id="navbarText">
                   <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                      <a class="nav-link" href="index.php">Acceuil</a>
+                      <a class="nav-link" href="index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="add.php">Ajouter une voiture</a>
@@ -32,7 +35,16 @@ require_once __DIR__ . './database.php';
                   </ul>
                 </div>  
                   <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav ml-auto">                           
+                        <ul class="navbar-nav ml-auto">  
+                        <?php if (isset($_SESSION['users'])) { ?>
+                         <?php
+                          $hash = md5($_SESSION['user']['email']);
+                echo $_SESSION['user']['email']; 
+                
+                        }?>
+
+
+
                           <li class="nav-item">
                             <a class="nav-link" href="login.php">login</a>
                           </li>
