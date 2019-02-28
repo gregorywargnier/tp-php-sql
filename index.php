@@ -27,10 +27,10 @@ foreach($car as $cars){?>
     <div class="col-2 my-4"><?php echo $cars['brand'];?></div>
     <div class="col-1 my-4"><?php echo $cars['model'];?></div>
     <div class="col-2 my-4 ">
-    <?php echo $cars['price'];
+    <?= number_format($cars['price'], 2, ',', ' ');
 
 
-    ?></div>
+    ?>€</div>
     <div class="col-2 my-4"><?php echo $cars['release_date'];?></div>
     <div class="col-1 my-4 ">
       <p>blabla</p>
